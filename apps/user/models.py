@@ -21,11 +21,11 @@ class Unit(models.Model):
 
 class Users(AbstractUser):
     rank = models.PositiveIntegerField(verbose_name="ยศ", choices = CHOICE_Rank, default = 0, null=True, blank=True)
-    unit_id = models.ForeignKey(Unit, verbose_name="สังกัด", on_delete=models.SET_NULL, null = True, blank=True, related_name='current_unit')
-    position = models.CharField(verbose_name="ตำแหน่ง", max_length=100,blank=True)
-    mobile_phone = models.CharField(verbose_name="เบอร์มือถือ",max_length=30, blank=True)
-    dutytype_id = models.ForeignKey("manageduty.dutytype", verbose_name='ประเภทเวร', on_delete=models.DO_NOTHING, null= True, blank=True)
-    is_approve = models.BooleanField()
+    unit = models.ForeignKey(Unit, verbose_name="สังกัด", on_delete=models.SET_NULL, null=True, blank=True, related_name='current_unit')
+    position = models.CharField(verbose_name="ตำแหน่ง", max_length=100,null=True, blank=True)
+    mobile_phone = models.CharField(verbose_name="เบอร์มือถือ",max_length=30, null=True, blank=True)
+    dutytype = models.ForeignKey("manageduty.dutytype", verbose_name='ประเภทเวร', on_delete=models.DO_NOTHING, null=True, blank=True)
+    is_approve = models.BooleanField(null=True, blank=True)
 
     # def unit_name(self):
     #     return f"{self.get_unit_id_display()}"

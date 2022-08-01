@@ -7,7 +7,7 @@ from .models import Users, Unit
 class UsersAdmin(UserAdmin):
     model = Users
     search_fields = ('username',"position")
-    list_display = ('id','FullName', 'username','unit_id',  'is_active','is_staff', 'is_superuser','is_approve' ,'last_login',)
+    list_display = ('id','FullName', 'username','unit',  'is_active','is_staff', 'is_superuser','is_approve' ,'last_login',)
     
     list_display_links = ('FullName', 'username')
     list_filter = ('position', 'is_staff', 'is_superuser')
@@ -15,7 +15,7 @@ class UsersAdmin(UserAdmin):
     
     fieldsets = (
         (None, 
-            {'fields': ('username', 'email', 'password','rank','first_name','last_name','unit_id','position','mobile_phone','dutytype_id','is_approve' )}
+            {'fields': ('username', 'email', 'password','rank','first_name','last_name','unit','position','mobile_phone','dutytype','is_approve' )}
         ),
         ('Permissions', 
             {'fields': ('is_staff', 'is_active','is_superuser', 'groups', 'user_permissions',)}
@@ -27,7 +27,7 @@ class UsersAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('username', 'email', 'password','rank','first_name','last_name','unit_id','position','mobile_phone','dutytype_id','is_approve')}
+            'fields': ('username', 'email', 'password','rank','first_name','last_name','unit','position','mobile_phone','dutytype','is_approve')}
          ),
     )
 

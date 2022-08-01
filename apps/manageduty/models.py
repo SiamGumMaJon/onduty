@@ -17,7 +17,7 @@ class dutytype(models.Model):
 
 
 class exception(models.Model):
-    users_id = models.ForeignKey("user.Users", verbose_name='user_id', on_delete=models.DO_NOTHING, null= True, blank=True)
+    users = models.ForeignKey("user.Users", verbose_name='user_id', on_delete=models.DO_NOTHING, null= True, blank=True)
     detail = models.CharField(verbose_name="รายละเอียดการงดเวร",max_length=100,null = True ,blank = True )
     start_date = models.DateTimeField(verbose_name="เริ่ม",null = True ,blank = True )
     end_date = models.DateTimeField(verbose_name="สิ้นสุด",null = True ,blank = True)
@@ -45,7 +45,7 @@ class exception(models.Model):
  
 
 class ondutylist(models.Model):
-    users_id = models.ForeignKey("user.Users", verbose_name='user_id', on_delete=models.DO_NOTHING, null= True, blank=True)
+    users = models.ForeignKey("user.Users", verbose_name='user_id', on_delete=models.DO_NOTHING, null= True, blank=True)
     start_onduty =models.DateTimeField(verbose_name="วัน-เวลา เริ่มเข้าเวร",null = True ,blank = True )
     end_onduty =models.DateTimeField(verbose_name="วัน-เวลา สิ้นสุด",null = True ,blank = True )
     edit_date = models.DateTimeField(verbose_name="แก้ไขล่าสุด",null = True ,blank = True )
