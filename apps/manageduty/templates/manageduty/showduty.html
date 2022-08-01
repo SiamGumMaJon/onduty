@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    {% comment %} {{request.user}} {% endcomment %}
+      <table class = 'table table-hover'>
+        <thead>
+        <tr>
+          <th>No</th>
+          <th>ยศ/คำนำหน้า</th>
+          <th>ชื่อ นามสกุล</th>
+          <th>หมายเลขโทรศัพท์</th>
+          <th>อีเมลย์</th>
+          <th>การดำเนินการ</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for list1 in all_data%}
+        <tr>
+          <td>{{ forloop.counter}}</td>
+          <td></td>
+          <td>{{ list1.first_name }}  {{ list1.last_name }}</td>
+          <td>{{ list1.mobile_phone }}</td>
+          <td>{{ list1.email }}</td>
+          <td><a href ="">ลบ</a>
+            <a href = "" >แก้ไข</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      </table>
+    <a href = "" >เพิ่มใหม่</a>
+    
+    
+    </div>
