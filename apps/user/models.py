@@ -1,4 +1,5 @@
 import re
+from uuid import RESERVED_FUTURE
 
 
 from django.db import models
@@ -29,6 +30,12 @@ class Users(AbstractUser):
 
     # def unit_name(self):
     #     return f"{self.get_unit_id_display()}"
+    def unit_name(self):
+        return f'{self.unit}'
+
+
+    def dutytype_name (self):
+        return f'{self.dutytype}'
 
     def full_name(self):
         return f"{self.rank_display()} {self.first_name} {self.last_name}"
