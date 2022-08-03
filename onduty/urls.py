@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 # from apps.manageduty import views
-from apps.user.views import memberall,register
+from apps.user.views import memberall, register,MyLoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +25,7 @@ urlpatterns = [
     path('tables',memberall,name = 'memberall'),
     path('account/',include('django.contrib.auth.urls')),
     path('register',register,name = 'register'),
+    path('login/', MyLoginView.as_view(), name = 'login'),
 
 
     # path ('member/',include('apps.user.urls'),name='member')

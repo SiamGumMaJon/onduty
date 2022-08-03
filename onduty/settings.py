@@ -136,9 +136,13 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static'),]
 
 
-
+LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/account/login'
+# AUTHENTICATION_BACKENDS = [
+#                             'apps.user.AFAuthentications.SettingsBackend',
+#                             'django.contrib.auth.backends.ModelBackend'
+#                         ]
 
 
 # Default primary key field type

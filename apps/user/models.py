@@ -30,15 +30,15 @@ class Users(AbstractUser):
 
     # def unit_name(self):
     #     return f"{self.get_unit_id_display()}"
+    
     def unit_name(self):
         return f'{self.unit}'
-
 
     def dutytype_name (self):
         return f'{self.dutytype}'
 
     def full_name(self):
-        return f"{self.rank_display()} {self.first_name} {self.last_name}"
+        return f"{self.rank_display()}{self.first_name}  {self.last_name}"
 
     class Meta:
         verbose_name_plural = "User : ผู้ใช้ระบบ" 
@@ -66,12 +66,15 @@ class Users(AbstractUser):
             return f'{RankDisplay} '        
         elif re.findall("(พ)", RankDisplay ):
             RankDisplay = RankDisplay.replace("(พ)", "")    
-        
         return f'{RankDisplay}'
-        
+
+
+
     @property
-    def FullName(self):        
+    def FullName(self):     
         return f'{self.rank_display()}{self.first_name} {self.last_name}'
+
+
 
     def __str__(self):
         return self.FullName
