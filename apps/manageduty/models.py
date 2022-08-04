@@ -3,6 +3,7 @@ from django.db import models
 
 
 
+
 class dutytype(models.Model):
     duty_shortname = models.CharField(verbose_name="หน้าที่เวร",max_length=50)
     duty_name = models.CharField(verbose_name="หน้าที่เวร",max_length=200)
@@ -28,8 +29,13 @@ class exception(models.Model):
         verbose_name_plural = "exception : งดเวร"
 
     def __str__(self):
-        return f'{self.users_id}'
- 
+        return f'{self.users}'
+
+    
+
+
+
+
 
 # class dutyhd(models.Model):
 #     dutytype_id = models.ForeignKey(dutytype, verbose_name='user_id', on_delete=models.DO_NOTHING, null= True, blank=True)
@@ -55,7 +61,7 @@ class ondutylist(models.Model):
         verbose_name_plural = "dutyhd : ตารางเวร"
 
     def __str__(self):
-        return f'ประเภทเวร {self.users_id} ของเดือน {self.start_onduty}'
+        return f'ประเภทเวร {self.users} ของเดือน {self.start_onduty}'
 
 class timeonduty(models.Model):
     day = models.DateTimeField(verbose_name="สร้างเมื่อ",null = True ,blank = True) 

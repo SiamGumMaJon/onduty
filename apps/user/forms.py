@@ -2,7 +2,6 @@ from django.contrib.auth.forms import AuthenticationForm
 from django import forms
 from .models import Users
 
-
 class MyAuthForm(AuthenticationForm):
 
     def __init__(self, *args, **kwargs):
@@ -25,6 +24,7 @@ class MyAuthForm(AuthenticationForm):
                     # 'id' : 'exampleInputEmail', 
                     'aria-describedby' : 'emailHelp'
                     }))
+
 
     password = forms.CharField(
         label= ("Password"),

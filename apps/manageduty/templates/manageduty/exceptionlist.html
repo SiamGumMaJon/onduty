@@ -20,30 +20,28 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">รายชื่อผู้ที่เข้าเวร จำนวน {{ num_task }} คน</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">รายชื่อผู้ที่งดเข้าเวร จำนวน {{ num_task }} คน</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>เลือก</th>
                                             <th>ลำดับ</th>
                                             <th>ยศ-ชื่อ-สกุล</th>
                                             <th>หน้าที่รับเวร</th>
                                             <th>สังกัด</th>
-                                            <th>เข้าเวรครั้งล่าสุด</th>
+                                            <th>รายละเอียดการงดเวร</th>
                                             <th>จัดการ</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>เลือก</th>
                                             <th>ลำดับ</th>
                                             <th>ยศ-ชื่อ-สกุล</th>
                                             <th>หน้าที่รับเวร</th>
                                             <th>สังกัด</th>
-                                            <th>เข้าเวรครั้งล่าสุด</th>
+                                            <th>รายละเอียดการงดเวร</th>
                                             <th>จัดการ</th>
                                         </tr>
                                     </tfoot>
@@ -51,15 +49,13 @@
                                         <div class="form-check">
                                             {% for data in all_data%}
                                             <tr>
-                                                <td></td>
                                                 <td>{{ forloop.counter}}</td>
                                                 <td>{{ data.FullName }}</td>
                                                 <td>{{ data.dutytype_name }}</td>
                                                 <td>{{ data.unit_name }}</td>
-                                                <td>{{ data.start }}</td>
-                                                
+                                                <td>{{ data.detail }}</td>
                                                 <td>
-                                                    <a href = ""  class="btn btn-danger" >Add dutylist</a>
+                                                    <a href = "" class="btn btn-warning" >file อ้างอิง</a>
                                                     <a href = "" onclick="return confirm('Are you sure?')" class="btn btn-danger" >ลบ</a>
                                                     <a href = "" class="btn btn-warning" >แก้ไข</a>
                                                 </td>

@@ -64,13 +64,13 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>แสดงรายชื่อ</span>
+                    <span>จัดการรายการชื่อ</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item" href="tables">รายชื่อผู้เข้าเวร</a>
-                        <a class="collapse-item" href="tables">รายชื่อผู้งดเว้นเวร</a>
+                        <a class="collapse-item" href="userslist">รายชื่อสมาชิก</a>
+                        {% comment %} <a class="collapse-item" href="exceptionlist">รายชื่อผู้งดเว้นเวร</a> {% endcomment %}
                     </div>
                 </div>
             </li>
@@ -101,12 +101,13 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>ตารางเวร</span>
+                    <span>จัดการตารางเวร</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-
+                        <a class="collapse-item" href="dutylist">รายชื่อผู้เข้าเวร</a>
+                        <a class="collapse-item" href="exceptionlist">รายชื่อผู้งดเข้าเวร</a>
                         <a class="collapse-item" href="">น.เวร</a>
                         <a class="collapse-item" href="">เสมียนเวร</a>
                         <a class="collapse-item" href="">เวรประชาสัมพันธ์</a>

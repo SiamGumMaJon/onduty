@@ -16,18 +16,18 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-# from apps.manageduty import views
-from apps.user.views import memberall, register,MyLoginView
+from apps.user.views import userslist, MyLoginView
+from apps.manageduty.views import dutylist,exceptionlist
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',memberall,name = 'memberall'),
-    path('tables',memberall,name = 'memberall'),
+    path('',userslist,name = 'userslist'),
+    path('userslist',userslist,name = 'userslist'),
+    path('dutylist',dutylist,name = 'dutylist'),
+    path('exceptionlist',exceptionlist,name = 'exceptionlist'),
     path('account/',include('django.contrib.auth.urls')),
-    path('register',register,name = 'register'),
+    # path('register',register,name = 'register'),
     path('login/', MyLoginView.as_view(), name = 'login'),
-
-
     # path ('member/',include('apps.user.urls'),name='member')
     
 ]
