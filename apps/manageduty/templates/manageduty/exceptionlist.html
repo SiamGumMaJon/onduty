@@ -31,7 +31,8 @@
                                             <th>ยศ-ชื่อ-สกุล</th>
                                             <th>หน้าที่รับเวร</th>
                                             <th>สังกัด</th>
-                                            <th>รายละเอียดการงดเวร</th>
+                                            <th>รายละเอียด</th>
+                                            <th>เริ่ม - สิ้นสุด</th>
                                             <th>จัดการ</th>
                                         </tr>
                                     </thead>
@@ -41,7 +42,8 @@
                                             <th>ยศ-ชื่อ-สกุล</th>
                                             <th>หน้าที่รับเวร</th>
                                             <th>สังกัด</th>
-                                            <th>รายละเอียดการงดเวร</th>
+                                            <th>รายละเอียด</th>
+                                            <th>เริ่ม - สิ้นสุด</th>
                                             <th>จัดการ</th>
                                         </tr>
                                     </tfoot>
@@ -50,10 +52,11 @@
                                             {% for data in all_data%}
                                             <tr>
                                                 <td>{{ forloop.counter}}</td>
-                                                <td>{{ data.FullName }}</td>
-                                                <td>{{ data.dutytype_name }}</td>
-                                                <td>{{ data.unit_name }}</td>
+                                                <td>{{ data.users }}</td>
+                                                <td>{{ data.users.dutytype_name }}</td>
+                                                <td>{{ data.users.unit_name }}</td>
                                                 <td>{{ data.detail }}</td>
+                                                <td>{{ data.start_date }} - {{ data.end_date }}</td>
                                                 <td>
                                                     <a href = "" class="btn btn-warning" >file อ้างอิง</a>
                                                     <a href = "" onclick="return confirm('Are you sure?')" class="btn btn-danger" >ลบ</a>

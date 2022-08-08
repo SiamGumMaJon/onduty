@@ -8,7 +8,7 @@ class DdutytypeAdmin(admin.ModelAdmin):
 
 @admin.register(exception)
 class ExceptionAdmin(admin.ModelAdmin):
-    list_display = ('users_id','detail','start_date','end_date',)
+    list_display = ('users','detail','start_date','end_date',)
 
 @admin.register(ondutylist)
 class OndutylistAdmin(admin.ModelAdmin):

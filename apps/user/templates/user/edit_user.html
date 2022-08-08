@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% load static %}
+{%block content%}
+
+
+ <!-- Main Content -->
+ <div id="content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- Page Heading -->
+
+        <form method = "post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>{{ form.as_table  }}</table>
+            <input type = "submit">
+        </form>
+
+    </div>
+</div>
+
+
+
+{%endblock content%}

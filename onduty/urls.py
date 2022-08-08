@@ -16,12 +16,12 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from apps.user.views import userslist, MyLoginView
-from apps.manageduty.views import dutylist,exceptionlist
+from apps.user.views import userslist, MyLoginView,edit_user,delete_user
+from apps.manageduty.views import dutylist,exceptionlist,dashboard
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',userslist,name = 'userslist'),
+    path('',dashboard,name = 'dashboard'),
     path('userslist',userslist,name = 'userslist'),
     path('dutylist',dutylist,name = 'dutylist'),
     path('exceptionlist',exceptionlist,name = 'exceptionlist'),
@@ -29,5 +29,6 @@ urlpatterns = [
     # path('register',register,name = 'register'),
     path('login/', MyLoginView.as_view(), name = 'login'),
     # path ('member/',include('apps.user.urls'),name='member')
-    
+    path('<user_id>/edit/', edit_user, name='edit_user'),
+    path('<user_id>/delete/',delete_user,name='delete_user'),
 ]
