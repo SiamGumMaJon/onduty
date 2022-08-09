@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import exception
 from django.contrib.auth.decorators import login_required
 from apps.user.models import Users
-# Create your views here.
+# Create your views here. 
 
 @login_required
 def dutylist(request):
