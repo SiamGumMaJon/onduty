@@ -16,7 +16,6 @@ def dutylist(request):
 
 @login_required
 def exceptionlist(request):
-    # list = exception.objects.filter(entry__headline__contains='Lennon').filter(entry__pub_date__year=2008)
     all_list =  exception.objects.all().order_by('users__rank')
     countlist = all_list.count()
     context = {"all_data" : all_list, "num_task" : countlist}

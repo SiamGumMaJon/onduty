@@ -10,7 +10,6 @@ class dutytype(models.Model):
     creat_date = models.DateTimeField(verbose_name="สร้างเมื่อ",blank = True)
     class Meta:
         verbose_name_plural = "Duty : ประเภทการเข้าเวร" 
-        
     def __str__(self):
         return f'{self.duty_shortname}'
 
@@ -28,14 +27,6 @@ class exception(models.Model):
 
     def __str__(self):
         return f'{self.users}'
-
-
-  
-
-    
-
-
-
 
 
 # class dutyhd(models.Model):
