@@ -6,7 +6,10 @@ from apps.user.models import Users
 
 @login_required
 def dutylist(request):
-    all_list =  Users.objects.all().order_by('rank')
+    exception_list =  exception.objects.values_list('users_id', flat=True)
+    print("exception_list ",exception_list)
+    all_list =  Users.objects.all().exclude(id__in = exception_list).order_by('rank')
+    # Users.objects.filter(unit__name__contains = "ศูนย?..")
     countlist = all_list.count()
     context = {"all_data" : all_list, "num_task" : countlist}
     return render(request,"manageduty/dutylist.html",context)
@@ -14,7 +17,7 @@ def dutylist(request):
 @login_required
 def exceptionlist(request):
     # list = exception.objects.filter(entry__headline__contains='Lennon').filter(entry__pub_date__year=2008)
-    all_list =  exception.objects.all().order_by('users')
+    all_list =  exception.objects.all().order_by('users__rank')
     countlist = all_list.count()
     context = {"all_data" : all_list, "num_task" : countlist}
     return render(request,"manageduty/exceptionlist.html",context)

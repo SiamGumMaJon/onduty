@@ -2,8 +2,6 @@ from django.db import models
 # from apps.user.models import Users
 
 
-
-
 class dutytype(models.Model):
     duty_shortname = models.CharField(verbose_name="หน้าที่เวร",max_length=50)
     duty_name = models.CharField(verbose_name="หน้าที่เวร",max_length=200)
