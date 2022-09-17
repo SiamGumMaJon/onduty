@@ -3,9 +3,12 @@ from django.shortcuts import render,redirect
 from .models import Users
 from apps.manageduty.models import exception
 from django.contrib.auth.decorators import login_required
+
+#ใช้ form ที่จัดรูปแบบใน forms.py
 from django.contrib.auth.views import LoginView
-from .forms import MyAuthForm,UsersForm
-from django.contrib import messages
+from .forms import MyAuthForm,UsersForm #ดึ class จาก forms.py
+
+from django.contrib import messages # ส่ง message  
 
 
 class MyLoginView(LoginView):    

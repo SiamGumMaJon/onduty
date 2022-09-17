@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+
+
 {% extends 'index.html' %}
 {% load static %}
-{%block content%}
+{% block content %}
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -21,17 +23,20 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">รายชื่อผู้ที่ต้องเข้าเวร จำนวน {{ num_task }} คน</h6>
+
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
                                     <thead>
-                                        <tr>
+                                        
                                             <th>ลำดับ</th>
                                             <th>ยศ-ชื่อ-สกุล</th>
                                             <th>หน้าที่รับเวร</th>
                                             <th>สังกัด</th>
                                             <th>เข้าเวรครั้งล่าสุด</th>
+                                            <th>รายการงดเวร</th>
                                             <th>จัดการ</th>
                                         </tr>
                                     </thead>
@@ -42,6 +47,7 @@
                                             <th>หน้าที่รับเวร</th>
                                             <th>สังกัด</th>
                                             <th>เข้าเวรครั้งล่าสุด</th>
+                                            <th>รายการงดเวร</th>
                                             <th>จัดการ</th>
                                         </tr>
                                     </tfoot>
@@ -53,10 +59,22 @@
                                                 <td>{{ data.FullName }}</td>
                                                 <td>{{ data.dutytype_name }}</td>
                                                 <td>{{ data.unit_name }}</td>
-                                                <td>{{ data.start }}</td>
-                                                
                                                 <td>
-                                                    <a href = ""  class="btn btn-danger" >Add list</a>
+                                                    {% for ondutylist_detail_data in ondutylist_detail_data %}
+                                                        {% if data.id == ondutylist_detail_data.users.id %}
+                                                            เข้าเวร {{ondutylist_detail_data.start_onduty}}<br>
+                                                            {% endif %}
+                                                    {% endfor %}
+                                                </td>
+                                                <td>
+                                                    {% for exception_list_data in exception_list_data %}
+                                                        {% if data.id == exception_list_data.users.id %}
+                                                            {{exception_list_data.detail}}
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </td>
+                                                <td>
+                                                    <a href = ""  class="btn btn-danger" >จัดเข้าเวร</a>
                                                     <a href = "" onclick="return confirm('Are you sure?')" class="btn btn-danger" >ลบ</a>
                                                     <a href = "" class="btn btn-warning" >แก้ไข</a>
                                                 </td>

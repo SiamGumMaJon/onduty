@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from apps.user.views import userslist, MyLoginView,edit_user,delete_user
-from apps.manageduty.views import dutylist,exceptionlist,dashboard
+from apps.manageduty.views import dutylist,exceptionlist,officerslist,clerklist,publicrelations,dashboard
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,7 +25,11 @@ urlpatterns = [
     path('userslist',userslist,name = 'userslist'),
     path('dutylist',dutylist,name = 'dutylist'),
     path('exceptionlist',exceptionlist,name = 'exceptionlist'),
+    path('officerslist',officerslist,name = 'officerslist'),
+    path('clerklist',clerklist,name = 'clerklist'),
+    path('publicrelations',publicrelations,name = 'publicrelations'),
     path('account/',include('django.contrib.auth.urls')),
+
     # path('register',register,name = 'register'),
     path('login/', MyLoginView.as_view(), name = 'login'),
     # path ('member/',include('apps.user.urls'),name='member')
