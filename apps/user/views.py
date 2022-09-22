@@ -8,12 +8,14 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from .forms import MyAuthForm,UsersForm #ดึ class จาก forms.py
 
-from django.contrib import messages # ส่ง message  
+from django.contrib import messages # ส่ง message
 
 
 class MyLoginView(LoginView):    
     authentication_form = MyAuthForm
     template_name = 'registration/login.html'
+
+
 
 @login_required
 def userslist(request):
