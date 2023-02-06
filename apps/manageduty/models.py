@@ -1,7 +1,5 @@
 from django.db import models
 # from apps.user.models import Users
-
-
 class dutytype(models.Model):
     duty_shortname = models.CharField(verbose_name="หน้าที่เวร",max_length=50)
     duty_name = models.CharField(verbose_name="หน้าที่เวร",max_length=200)
@@ -12,8 +10,6 @@ class dutytype(models.Model):
         verbose_name_plural = "Duty : ประเภทการเข้าเวร" 
     def __str__(self):
         return f'{self.duty_shortname}'
-
-
 class exception(models.Model):
     users = models.ForeignKey("user.Users", verbose_name='name', on_delete=models.DO_NOTHING, null= True, blank=True)
     detail = models.CharField(verbose_name="รายละเอียดการงดเวร",max_length=100,null = True ,blank = True )
@@ -21,13 +17,11 @@ class exception(models.Model):
     end_date = models.DateField(verbose_name="สิ้นสุด",null = True ,blank = True)
     edit_date = models.DateTimeField(verbose_name="แก้ไขล่าสุด",null = True ,blank = True )
     creat_date = models.DateTimeField(verbose_name="สร้างเมื่อ",null = True ,blank = True) 
-    
     class Meta:
         verbose_name_plural = "exception : งดเวร"
 
     def __str__(self):
         return f'{self.users}'
-
 
 # class dutyhd(models.Model):
 #     dutytype_id = models.ForeignKey(dutytype, verbose_name='user_id', on_delete=models.DO_NOTHING, null= True, blank=True)
@@ -41,7 +35,6 @@ class exception(models.Model):
 #     def __str__(self):
 #         return f'ประเภทเวร {self.dutytype_id} ของเดือน {self.period}'
  
-
 class ondutylist(models.Model):
     users = models.ForeignKey("user.Users", verbose_name='user_id', on_delete=models.DO_NOTHING, null= True, blank=True)
     start_onduty =models.DateTimeField(verbose_name="วัน-เวลา เริ่มเข้าเวร",null = True ,blank = True )
